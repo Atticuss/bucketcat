@@ -1,6 +1,18 @@
 # bucketcat
 Brute-forces objects within a given bucket using Hashcat mask-like syntax
 
+> But why?
+
+Because occasionally you'll come across AWS keys that can S3:GetObject but not S3:ListBucket
+
+> Does that really happen that often?
+
+Nope.
+
+> So then again.... why
+
+Because I needed to take a break from everything else I'm doing and find an excuse to write some good ol' Python.
+
 #### Usage
 ```
 usage: bucketcat.py [-h] [-m MASK | -f INFILE] [-k CREDSFILE] [-p PROFILE]
