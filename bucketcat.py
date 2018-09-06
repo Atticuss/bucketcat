@@ -76,7 +76,7 @@ def build_key():
       char_i = key_index % key_lens[i]
     else:
       key_len = reduce(lambda x, y: x*y, key_lens[i+1:])
-      char_i = int(key_index / key_len) #conveniently math.floors for us
+      char_i = int(key_index / key_len) % key_len 
       
     key_chars.append(keyspaces[k][char_i])
 
@@ -87,6 +87,7 @@ def build_key():
     final_string += c
     mask = mask[i+2:]
 
+  final_string += mask
   return final_string
 
 def get_search_space(mask):
@@ -227,6 +228,7 @@ if __name__ == '__main__':
     print('[*] Exiting...')
     for r in runners:
       r.die = True
+    [r.join() for r in runners]
 
   if orig_cred_file:
     os.environ['AWS_SHARED_CREDENTIALS_FILE'] = orig_cred_file
