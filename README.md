@@ -71,3 +71,7 @@ x?1?1.txt
 ```
 
 This creates a new key `?1` assigned to 0-9 and a-f. This example would generate all S3 keys in the form of `x00.txt` through `xff.txt`.
+
+### TODO
+
+* Add support for distributed brute-forcing
