@@ -51,11 +51,11 @@ def get_next_key():
 
   with lock:
     if get_search_space(masks[mask_index]) == key_index:
-      key_index = 0
-      mask_index += 1
-
-    if mask_index >= len(masks):
-      return None
+      if (mask_index+1) == len(masks):
+        return None
+      else:
+        key_index = 0
+        mask_index += 1
 
     key = build_key()
     key_index += 1
