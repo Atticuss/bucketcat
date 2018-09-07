@@ -96,7 +96,7 @@ def get_search_space(mask):
   return reduce(lambda x, y: x*y, [len(keyspaces[k]) for k in keys])
 
 def parse_hcmask_file(hcmask):
-  p = re.compile('^\?.\s')
+  p = re.compile('^\?\d\s')
 
   masks = []
   with open(hcmask, 'r') as f:

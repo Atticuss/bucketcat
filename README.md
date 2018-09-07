@@ -70,8 +70,8 @@ And the contents of test.hcmask:
 x?1?1.txt
 ```
 
-This creates a new key `?1` assigned to 0-9 and a-f. This example would generate all S3 keys in the form of `x00.txt` through `xff.txt`.
+This creates a new key `?1` assigned to 0-9 and a-f. This example would generate all S3 keys in the form of `x00.txt` through `xff.txt`. Note: all user-created character sets must use a digit (e.g `?1`). This is to allow hcmask files to search for "?a foobar" without overwriting the `?a` set.
 
 ### TODO
 
-* Add support for distributed brute-forcing
+* Add support for distributed brute-forcing via the `--server` and `--client` flags.
