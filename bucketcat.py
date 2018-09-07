@@ -197,6 +197,10 @@ if __name__ == '__main__':
 
     while True in [r.isAlive() for r in runners]:
       if mask_index > current_mask:
+        text = '\r[{0}] {1:.2f}%'.format('#'*barLength, 100)
+        sys.stdout.write(text)
+        sys.stdout.flush()
+
         current_mask = mask_index
         mask_space = get_search_space(masks[current_mask])
         print('\n\n[*] Current mask: {}'.format(masks[current_mask]))
